@@ -37,11 +37,25 @@ $(function () {
 
 	// popup
 
+
+
 	$('.open-modal').magnificPopup({
-		type: 'inline',
-		mainClass: 'mfp-fade'
+		type: 'image',
+		mainClass: 'mfp-fade mfp-fix'
+
 	});
 
+	$('.jobs-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		mainClass: 'mfp-fade mfp-fix',
+		tLoading: 'Загрузка изоброжения',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+		}
+	});
 	//popup close
 	function closePopup(closeBtn) {
 		let popupClose = document.querySelectorAll(`.${closeBtn}`);
