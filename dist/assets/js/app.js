@@ -22,6 +22,15 @@ $(function () {
 		duration: 1150,
 	});
 
+	// скролл
+	$(".scroll-link").click(function () {
+		var target = $(this).attr('href');
+		$('html, body').animate({
+			scrollTop: $(target).offset().top - 100
+		}, 1000);
+		return false;
+	});
+
 	// маска телефона
 	$('.mask-tell').inputmask("+X (999) 999-9999", {
 		definitions: {
