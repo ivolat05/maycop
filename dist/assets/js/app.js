@@ -48,9 +48,9 @@ $(function () {
 
 
 
-	$('.open-modal').magnificPopup({
-		type: 'image',
-		mainClass: 'mfp-fade mfp-fix'
+	$('.open-popup').magnificPopup({
+		type: 'inline',
+		mainClass: 'mfp-fade'
 
 	});
 

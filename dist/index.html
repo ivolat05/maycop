@@ -37,7 +37,8 @@
 						<a href="tel:+79770004175" class="header-tell">
 							+7 (977) 000 41 75
 						</a>
-						<a href="#" class="header-btn block-btn d-flex align-items-center justify-content-center">
+						<a href="#popup-tell"
+							class="header-btn open-popup block-btn d-flex align-items-center justify-content-center">
 							Перезвонить мне
 						</a>
 					</div>
@@ -73,7 +74,7 @@
 								В наличии и под заказ
 							</li>
 						</ul>
-						<a href="#" class="block-btn main-btn ">
+						<a href="#popup-tell" class="block-btn open-popup main-btn ">
 							Скачать каталог
 						</a>
 					</div>
@@ -1004,7 +1005,8 @@
 							<a href="tel:+79770004175" class="header-tell">
 								+7 (977) 000 41 75
 							</a>
-							<a href="#" class="header-btn block-btn d-flex align-items-center justify-content-center">
+							<a href="#popup-tell"
+								class="header-btn open-popup block-btn d-flex align-items-center justify-content-center">
 								Перезвонить мне
 							</a>
 						</div>
@@ -1023,7 +1025,6 @@
 		
 			</div>
 		</footer>
-	
 		<div class="menu w-100 d-lg-none d-flex position-fixed">
 			<a href="#header" class="menu-link scroll-link">
 				<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1104,7 +1105,34 @@
 				</div>
 			</a>
 		</div>
+		<div id="popup-tell" class="popup-tell mfp-hide">
+			<h3 class="popup-tell-title text-center">
+				Получить полный каталог
+			</h3>
+			<p class="popup-tell-text text-center">
+				Заполните поля ниже и мы <br>
+				отправим Вам полный каталог
+			</p>
+			<form action="/" class="popup-tell-form">
+				<input type="text" class="popup-tell-input text-center" name="name" placeholder="Ваше имя">
+				<input type="tel" class="popup-tell-input mask-tell text-center" name="phone" placeholder="Телефон"
+					inputmode="text">
+				<button type="submit" class="popup-tell-btn block-btn d-flex align-items-center justify-content-center">
+					Заказать
+				</button>
+				<label class="discount-label position-relative d-flex justify-content-center ">
+					<input type="checkbox" class="discount-label-input" checked="">
+					<span class="discount-label-span">
+						согласен на обработку
+						<a href="#" class="discount-label-link">
+							персональных данных
+						</a>
+					</span>
+				</label>
+			</form>
+		</div>
 	</div>
+	
 	<script src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU">
 	</script>
 	<script>
