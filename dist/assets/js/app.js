@@ -50,14 +50,20 @@ $(function () {
 
 	$('.open-popup').magnificPopup({
 		type: 'inline',
-		mainClass: 'mfp-fade'
+		mainClass: 'mfp-fade mfp-left'
+
+	});
+
+	$('.open-popup-rev').magnificPopup({
+		type: 'image',
+		mainClass: 'mfp-fade mfp-fix mfp-left'
 
 	});
 
 	$('.jobs-gallery').magnificPopup({
 		delegate: 'a',
 		type: 'image',
-		mainClass: 'mfp-fade mfp-fix',
+		mainClass: 'mfp-fade mfp-fix  mfp-left',
 		tLoading: 'Загрузка изоброжения',
 		gallery: {
 			enabled: true,
@@ -103,4 +109,31 @@ $(function () {
 			}
 		]
 	});
+
+	// раскрытия скрытых карточек
+	// btnActive- кнопка активации
+	// cartHiden- скрытые карточки
+	function cartVisibtl(btnActive, cartHiden) {
+		let btn = document.querySelector(`${btnActive}`);
+		let card = document.querySelectorAll(`${cartHiden}`);
+		if (card) {
+			btn.addEventListener('click', () => {
+				if (btn.classList.contains('btn--visible')) {
+					btn.classList.remove('btn--visible')
+				} else {
+					btn.classList.add('btn--visible')
+				}
+				card.forEach(item => {
+					if (item.classList.contains('--active')) {
+						item.classList.remove('--active');
+					} else {
+						item.classList.add('--active');
+					}
+				})
+			})
+		}
+	}
+	cartVisibtl('.catalog-btn', '.catalog-table');
+	cartVisibtl('.reviews-btn', '.reviews-box');
+	cartVisibtl('.jobs-btn', '.jobs-box');
 })
