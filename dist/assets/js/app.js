@@ -136,4 +136,44 @@ $(function () {
 	cartVisibtl('.catalog-btn', '.catalog-table');
 	cartVisibtl('.reviews-btn', '.reviews-box');
 	cartVisibtl('.jobs-btn', '.jobs-box');
+
+	// slaider product
+
+
+	$('.cart__slider-for').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.cart__slaider-nav'
+	});
+	$('.cart__slaider-nav').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		asNavFor: '.cart__slider-for',
+		dots: false,
+		nextArrow: $(".cart__slick-next"),
+		prevArrow: $(".cart__slick-prev"),
+		focusOnSelect: true,
+		arrows: true,
+		responsive: [
+			{
+				breakpoint: 770,
+				settings: {
+					slidesToShow: 3,
+					arrows: true,
+					slidesToScroll: 1
+
+				}
+			},
+			{
+				breakpoint: 460,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1
+
+				}
+			}
+		]
+	});
 })
