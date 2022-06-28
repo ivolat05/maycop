@@ -57,4 +57,27 @@ $(function () {
 	}
 	closePopup('popup-close');
 
+	// slaider
+
+	$(".catalog-slaider").slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		dots: false,
+		infinite: false,
+		arrows: true,
+
+		nextArrow: $(".block__slick-next"),
+		prevArrow: $(".block__slick-prev"),
+
+		responsive: [
+			{
+				breakpoint: 92,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					dots: false
+				}
+			}
+		]
+	});
 })
