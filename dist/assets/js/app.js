@@ -86,6 +86,53 @@ $(function () {
 	}
 	closePopup('popup-close');
 
+	// слайдер в моальных окнах
+	function slaidPopup(openBtn) {
+		let btn = document.querySelectorAll(`${openBtn}`);
+		if (btn) {
+			btn.forEach(item => {
+				item.addEventListener('click', () => {
+					let classSlaider = item.getAttribute('data-slaider');
+					let slaiderHead = `.${classSlaider}-slaider`;
+					let slaiderNav = `.${classSlaider}-nav`;
+					console.log(classSlaider)
+					$(slaiderHead).slick({
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						arrows: false,
+						fade: true,
+						rows: 0,
+						asNavFor: slaiderNav
+					});
+					$(slaiderNav).slick({
+						slidesToShow: 4,
+						slidesToScroll: 1,
+						asNavFor: slaiderHead,
+						dots: false,
+						rows: 0,
+						nextArrow: $(".popup__slick-next"),
+						prevArrow: $(".popup__slick-prev"),
+						focusOnSelect: true,
+						arrows: true,
+						responsive: [
+							{
+								breakpoint: 770,
+								settings: {
+									slidesToShow: 3,
+									arrows: true,
+									slidesToScroll: 1
+
+								}
+							}
+						]
+					});
+				})
+			})
+		}
+	}
+
+	slaidPopup('.open-popup')
+
 	// slaider
 
 	$(".catalog-slaider").slick({
@@ -137,43 +184,19 @@ $(function () {
 	cartVisibtl('.reviews-btn', '.reviews-box');
 	cartVisibtl('.jobs-btn', '.jobs-box');
 
-	// slaider product
-
-
-	$('.cart__slider-for').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		fade: true,
-		asNavFor: '.cart__slaider-nav'
-	});
-	$('.cart__slaider-nav').slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		asNavFor: '.cart__slider-for',
-		dots: false,
-		nextArrow: $(".cart__slick-next"),
-		prevArrow: $(".cart__slick-prev"),
-		focusOnSelect: true,
-		arrows: true,
-		responsive: [
-			{
-				breakpoint: 770,
-				settings: {
-					slidesToShow: 3,
-					arrows: true,
-					slidesToScroll: 1
-
-				}
-			},
-			{
-				breakpoint: 460,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
-
-				}
-			}
-		]
-	});
+	// появления меню вызова модалки попап
+	function hoverBox(boxHover) {
+		let box = document.querySelectorAll(`${boxHover}`);
+		if (box) {
+			box.forEach(item => {
+				item.addEventListener('mouseover', () => {
+					item.classList.add('active-hover')
+				})
+				item.addEventListener('mouseout', () => {
+					item.classList.remove('active-hover')
+				})
+			})
+		}
+	}
+	hoverBox('.catalog-box')
 })
