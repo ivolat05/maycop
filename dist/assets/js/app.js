@@ -17,186 +17,186 @@
 
 $(function () {
 
-	// анимация
-	AOS.init({
-		duration: 1150,
-	});
+    // анимация
+    AOS.init({
+        duration: 1150,
+    });
 
-	// скролл
-	$(".scroll-link").click(function () {
-		var target = $(this).attr('href');
-		$('html, body').animate({
-			scrollTop: $(target).offset().top - 100
-		}, 1000);
-		return false;
-	});
+    // скролл
+    $(".scroll-link").click(function () {
+        var target = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(target).offset().top - 100
+        }, 1000);
+        return false;
+    });
 
-	// маска телефона
-	$('.mask-tell').inputmask("+X (999) 999-9999", {
-		definitions: {
-			"X": {
-				validator: "[7-8]",
-			}
-		},
-		oncomplete: function () {
-			$(this).val('+7' + $(this).val().substring(2));
-		}
-	});
-
-
-	// popup
+    // маска телефона
+    $('.mask-tell').inputmask("+X (999) 999-9999", {
+        definitions: {
+            "X": {
+                validator: "[7-8]",
+            }
+        },
+        oncomplete: function () {
+            $(this).val('+7' + $(this).val().substring(2));
+        }
+    });
 
 
-
-	$('.open-popup').magnificPopup({
-		type: 'inline',
-		mainClass: 'mfp-fade mfp-left'
-
-	});
-
-	$('.open-popup-rev').magnificPopup({
-		type: 'image',
-		mainClass: 'mfp-fade mfp-fix mfp-left'
-
-	});
-
-	$('.jobs-gallery').magnificPopup({
-		delegate: 'a',
-		type: 'image',
-		mainClass: 'mfp-fade mfp-fix  mfp-left',
-		tLoading: 'Загрузка изоброжения',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
-		}
-	});
-	//popup close
-	function closePopup(closeBtn) {
-		let popupClose = document.querySelectorAll(`.${closeBtn}`);
-		if (popupClose) {
-			popupClose.forEach((item) => {
-				item.addEventListener('click', () => {
-					$.magnificPopup.close();
-				})
-			})
-		}
+    // popup
 
 
-	}
-	closePopup('popup-close');
 
-	// слайдер в моальных окнах
-	function slaidPopup(openBtn) {
-		let btn = document.querySelectorAll(`${openBtn}`);
-		if (btn) {
-			btn.forEach(item => {
-				item.addEventListener('click', () => {
-					let classSlaider = item.getAttribute('data-slaider');
-					let slaiderHead = `.${classSlaider}-slaider`;
-					let slaiderNav = `.${classSlaider}-nav`;
-					console.log(classSlaider)
-					$(slaiderHead).slick({
-						slidesToShow: 1,
-						slidesToScroll: 1,
-						arrows: false,
-						fade: true,
-						rows: 0,
-						asNavFor: slaiderNav
-					});
-					$(slaiderNav).slick({
-						slidesToShow: 4,
-						slidesToScroll: 1,
-						asNavFor: slaiderHead,
-						dots: false,
-						rows: 0,
-						nextArrow: $(".popup__slick-next"),
-						prevArrow: $(".popup__slick-prev"),
-						focusOnSelect: true,
-						arrows: true,
-						responsive: [
-							{
-								breakpoint: 770,
-								settings: {
-									slidesToShow: 3,
-									arrows: true,
-									slidesToScroll: 1
+    $('.open-popup').magnificPopup({
+        type: 'inline',
+        mainClass: 'mfp-fade mfp-left'
 
-								}
-							}
-						]
-					});
-				})
-			})
-		}
-	}
+    });
 
-	slaidPopup('.open-popup')
+    $('.open-popup-rev').magnificPopup({
+        type: 'image',
+        mainClass: 'mfp-fade mfp-fix mfp-left'
 
-	// slaider
+    });
 
-	$(".catalog-slaider").slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		dots: false,
-		infinite: false,
-		arrows: true,
+    $('.jobs-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        mainClass: 'mfp-fade mfp-fix  mfp-left',
+        tLoading: 'Загрузка изоброжения',
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        }
+    });
+    //popup close
+    function closePopup(closeBtn) {
+        let popupClose = document.querySelectorAll(`.${closeBtn}`);
+        if (popupClose) {
+            popupClose.forEach((item) => {
+                item.addEventListener('click', () => {
+                    $.magnificPopup.close();
+                })
+            })
+        }
 
-		nextArrow: $(".block__slick-next"),
-		prevArrow: $(".block__slick-prev"),
 
-		responsive: [
-			{
-				breakpoint: 92,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1,
-					dots: false
-				}
-			}
-		]
-	});
+    }
+    closePopup('popup-close');
 
-	// раскрытия скрытых карточек
-	// btnActive- кнопка активации
-	// cartHiden- скрытые карточки
-	function cartVisibtl(btnActive, cartHiden) {
-		let btn = document.querySelector(`${btnActive}`);
-		let card = document.querySelectorAll(`${cartHiden}`);
-		if (card) {
-			btn.addEventListener('click', () => {
-				if (btn.classList.contains('btn--visible')) {
-					btn.classList.remove('btn--visible')
-				} else {
-					btn.classList.add('btn--visible')
-				}
-				card.forEach(item => {
-					if (item.classList.contains('--active')) {
-						item.classList.remove('--active');
-					} else {
-						item.classList.add('--active');
-					}
-				})
-			})
-		}
-	}
-	cartVisibtl('.catalog-btn', '.catalog-table');
-	cartVisibtl('.reviews-btn', '.reviews-box');
-	cartVisibtl('.jobs-btn', '.jobs-box');
+    // слайдер в моальных окнах
+    function slaidPopup(openBtn) {
+        let btn = document.querySelectorAll(`${openBtn}`);
+        if (btn) {
+            btn.forEach(item => {
+                item.addEventListener('click', () => {
+                    let classSlaider = item.getAttribute('data-slaider');
+                    let slaiderHead = `.${classSlaider}-slaider`;
+                    let slaiderNav = `.${classSlaider}-nav`;
 
-	// появления меню вызова модалки попап
-	function hoverBox(boxHover) {
-		let box = document.querySelectorAll(`${boxHover}`);
-		if (box) {
-			box.forEach(item => {
-				item.addEventListener('mouseover', () => {
-					item.classList.add('active-hover')
-				})
-				item.addEventListener('mouseout', () => {
-					item.classList.remove('active-hover')
-				})
-			})
-		}
-	}
-	hoverBox('.catalog-box')
+                    $(slaiderHead).slick({
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: false,
+                        fade: true,
+                        rows: 0,
+                        asNavFor: slaiderNav
+                    });
+                    $(slaiderNav).slick({
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                        asNavFor: slaiderHead,
+                        dots: false,
+                        rows: 0,
+                        nextArrow: $(".popup__slick-next"),
+                        prevArrow: $(".popup__slick-prev"),
+                        focusOnSelect: true,
+                        arrows: true,
+                        responsive: [
+                            {
+                                breakpoint: 770,
+                                settings: {
+                                    slidesToShow: 3,
+                                    arrows: true,
+                                    slidesToScroll: 1
+
+                                }
+                            }
+                        ]
+                    });
+                })
+            })
+        }
+    }
+
+    slaidPopup('.open-popup')
+
+    // slaider
+
+    $(".catalog-slaider").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        dots: false,
+        infinite: false,
+        arrows: true,
+
+        nextArrow: $(".block__slick-next"),
+        prevArrow: $(".block__slick-prev"),
+
+        responsive: [
+            {
+                breakpoint: 92,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    dots: false
+                }
+            }
+        ]
+    });
+
+    // раскрытия скрытых карточек
+    // btnActive- кнопка активации
+    // cartHiden- скрытые карточки
+    function cartVisibtl(btnActive, cartHiden) {
+        let btn = document.querySelector(`${btnActive}`);
+        let card = document.querySelectorAll(`${cartHiden}`);
+        if (card) {
+            btn.addEventListener('click', () => {
+                if (btn.classList.contains('btn--visible')) {
+                    btn.classList.remove('btn--visible')
+                } else {
+                    btn.classList.add('btn--visible')
+                }
+                card.forEach(item => {
+                    if (item.classList.contains('--active')) {
+                        item.classList.remove('--active');
+                    } else {
+                        item.classList.add('--active');
+                    }
+                })
+            })
+        }
+    }
+    cartVisibtl('.catalog-btn', '.catalog-table');
+    cartVisibtl('.reviews-btn', '.reviews-box');
+    cartVisibtl('.jobs-btn', '.jobs-box');
+
+    // появления меню вызова модалки попап
+    function hoverBox(boxHover) {
+        let box = document.querySelectorAll(`${boxHover}`);
+        if (box) {
+            box.forEach(item => {
+                item.addEventListener('mouseover', () => {
+                    item.classList.add('active-hover')
+                })
+                item.addEventListener('mouseout', () => {
+                    item.classList.remove('active-hover')
+                })
+            })
+        }
+    }
+    hoverBox('.catalog-box')
 })
