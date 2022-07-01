@@ -13,6 +13,7 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	<!--favicon-->
+	<link rel="icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
 	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
@@ -30,8 +31,11 @@
 		<header id="header" class="header">
 			<div class="container">
 				<div class="header-wrapp d-flex align-items-center justify-content-between">
-					<div class="header-logo">
+					<div class="header-logo d-flex align-items-center justify-content-start">
 						<img src="./assets/img/logo.svg" alt="" class="logo">
+						<h3 class="logo-title d-none d-lg-block">
+							СтолRu.ru
+						</h3>
 					</div>
 					<div class="header-coll d-flex align-items-center justify-content-between">
 						<a href="tel:+79770004175" class="header-tell header-tell-mob">
@@ -53,7 +57,7 @@
 				</div>
 			</div>
 		</header>
-		<main class="main position-relative">
+		<main class="main position-relative" data-aos="fade-up">
 			<div class="container">
 				<div class="main-wrapp d-flex flex-column flex-lg-row justify-content-between">
 					<div class="main-col">
@@ -96,7 +100,7 @@
 			<div class="container">
 				<div class="about-wrapp  flex-wrap d-flex justify-content-evenly">
 		
-					<div class="box about-box">
+					<div class="box about-box" data-aos="flip-up">
 						<img src="./assets/img/about/about-1.svg" alt="" class="box-img">
 						<h3 class="box-title  about-title">
 							Лучшая цена <br>
@@ -108,7 +112,7 @@
 						</p>
 					</div>
 		
-					<div class="box about-box">
+					<div class="box about-box" data-aos="flip-up">
 						<img src="./assets/img/about/about-2.svg" alt="" class="box-img">
 						<h3 class="box-title  about-title">
 							Массив бука <br>
@@ -120,7 +124,7 @@
 						</p>
 					</div>
 		
-					<div class="box about-box">
+					<div class="box about-box" data-aos="flip-up">
 						<img src="./assets/img/about/about-3.svg" alt="" class="box-img">
 						<h3 class="box-title  about-title">
 							В наличии и <br>
@@ -132,7 +136,7 @@
 						</p>
 					</div>
 		
-					<div class="box about-box">
+					<div class="box about-box" data-aos="flip-up">
 						<img src="./assets/img/about/about-4.svg" alt="" class="box-img">
 						<h3 class="box-title  about-title">
 							Предоставляем <br>
@@ -144,7 +148,7 @@
 						</p>
 					</div>
 		
-					<div class="box about-box">
+					<div class="box about-box" data-aos="flip-up">
 						<img src="./assets/img/about/about-5.svg" alt="" class="box-img">
 						<h3 class="box-title  about-title">
 							Доставка по <br>
@@ -164,7 +168,7 @@
 				Лучшая цена на рынке
 			</h3>
 			<div class="container best-container ">
-				<div class="best-row d-flex flex-lg-row flex-column ">
+				<div class="best-row d-flex flex-lg-row flex-column " data-aos="fade-right">
 					<div class="best-box-img best-row-border">
 						<img src="./assets/img/best/best-1.jpg" alt="" class="best-img d-none d-md-block">
 						<img src="./assets/img/best/best-1-mob.jpg" alt="" class="best-img best-img d-md-none d-block">
@@ -184,7 +188,7 @@
 					</div>
 				</div>
 		
-				<div class="best-row best-row-reverse d-flex flex-column flex-lg-row-reverse d-flex ">
+				<div class="best-row best-row-reverse d-flex flex-column flex-lg-row-reverse d-flex " data-aos="fade-left">
 					<div class="best-box-img ">
 						<img src="./assets/img/best/best-2.jpg" alt="" class="best-img best-img d-none d-md-block">
 						<img src="./assets/img/best/best-2-mob.jpg" alt="" class="best-img d-md-none d-block">
@@ -204,7 +208,7 @@
 			</div>
 		
 		</section>
-		<section id="discount" class="discount discount-padding">
+		<section id="discount" class="discount discount-padding" data-aos="zoom-out-down">
 			<h3 class="title discount-title text-center">
 				Скидка 15% на готовую мебель со склада
 			</h3>
@@ -231,7 +235,7 @@
 									Отправим за 3 дня.
 								</p>
 							</div>
-							<form action="/" class="discount-form">
+							<form id="form-16" action="/" class="discount-form">
 								<input type="text" class="dicount-input  d-none d-lg-flex  text-center" name="name"
 									placeholder="Имя">
 								<input type="tel" class="dicount-input mask-tell text-center" name="phone"
@@ -255,7 +259,7 @@
 		
 			</div>
 		</section>
-		<section id="catalog" class="catalog catalog-padding">
+		<section id="catalog" class="catalog catalog-padding" data-aos="fade-up">
 			<h3 class="title catalog-title text-center">
 				Каталог
 			</h3>
@@ -632,7 +636,7 @@
 				</div>
 			</div>
 		</section>
-		<section id="dinner-grup" class="discount discount-grup-padding">
+		<section id="dinner-grup" class="discount discount-grup-padding" data-aos="zoom-in">
 			<h3 class="title discount-title text-center">
 				Нужна обеденная группа?
 			</h3>
@@ -657,7 +661,7 @@
 								</p>
 		
 							</div>
-							<form action="/" class="discount-form">
+							<form id="form-17" action="/" class="discount-form">
 								<input type="text" class="dicount-input text-center  d-none d-lg-flex " name="name"
 									placeholder="Имя">
 								<input type="tel" class="dicount-input mask-tell text-center" name="phone"
@@ -682,7 +686,7 @@
 		
 			</div>
 		</section>
-		<section class="reviews reviews-padding">
+		<section class="reviews reviews-padding" data-aos="fade-right">
 			<h3 class="title reviews-title text-center">
 				Отзывы
 			</h3>
@@ -690,8 +694,8 @@
 				<div class="reviews-wrap d-flex justify-content-start flex-wrap">
 		
 					<div class="reviews-box  position-relative">
-						<a href="#"
-							class="reviews-box-head position-relative  d-flex align-items-center justify-content-center">
+						<a href="#popup-video" data-video="#video-1"
+							class="reviews-box-head video-start open-popup-rev position-relative  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/reviews/matutihs.png" alt="" class="reviews-box-img">
 							<span class="reviews-head-span d-flex align-items-center justify-content-center position-absolute">
 								<svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -718,14 +722,15 @@
 								</div>
 							</div>
 						</div>
-						<a href="#" class="reviews-box-btn block-btn">
+						<a href="#popup-video" data-video="#video-1"
+							class="reviews-box-btn video-start open-popup-rev block-btn">
 							Смотреть видеоотзыв
 						</a>
 					</div>
 		
 					<div class="reviews-box  position-relative">
-						<a href="#"
-							class="reviews-box-head position-relative  d-flex align-items-center justify-content-center">
+						<a href="#popup-video" data-video="#video-1"
+							class="reviews-box-head video-start open-popup-rev position-relative  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/reviews/saposh.png" alt="" class="reviews-box-img">
 							<span class="reviews-head-span d-flex align-items-center justify-content-center position-absolute">
 								<svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -754,14 +759,15 @@
 								</div>
 							</div>
 						</div>
-						<a href="#" class="reviews-box-btn block-btn">
+						<a href="#popup-video" data-video="#video-1"
+							class="reviews-box-btn video-start open-popup-rev block-btn">
 							Смотреть видеоотзыв
 						</a>
 					</div>
 		
 					<div class="reviews-box  position-relative">
-						<a href="#"
-							class="reviews-box-head position-relative  d-flex align-items-center justify-content-center">
+						<a href="#popup-video" data-video="#video-1"
+							class="reviews-box-head video-start open-popup-rev position-relative  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/reviews/feclina.png" alt="" class="reviews-box-img">
 							<span class="reviews-head-span d-flex align-items-center justify-content-center position-absolute">
 								<svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -788,14 +794,15 @@
 								</div>
 							</div>
 						</div>
-						<a href="#" class="reviews-box-btn block-btn">
+						<a href="#popup-video" data-video="#video-1"
+							class="reviews-box-btn video-start open-popup-rev block-btn">
 							Смотреть видеоотзыв
 						</a>
 					</div>
 		
 					<div class="reviews-box  position-relative">
-						<a href="#"
-							class="reviews-box-head position-relative  d-flex align-items-center justify-content-center">
+						<a href="#popup-video" data-video="#video-1"
+							class="reviews-box-head video-start open-popup-rev position-relative  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/reviews/skydina.png" alt="" class="reviews-box-img">
 							<span class="reviews-head-span d-flex align-items-center justify-content-center position-absolute">
 								<svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -822,13 +829,14 @@
 								</div>
 							</div>
 						</div>
-						<a href="#" class="reviews-box-btn block-btn">
+						<a href="#popup-video" data-video="#video-1"
+							class="reviews-box-btn video-start open-popup-rev block-btn">
 							Смотреть видеоотзыв
 						</a>
 					</div>
 		
 					<div class="reviews-box  position-relative">
-						<a href="../../assets/img/reviews/dybinskaia.png"
+						<a href="#popup-galery-9 "
 							class="reviews-box-head open-popup-rev position-relative open-modal  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/reviews/dybinskaia.png" alt="" class="reviews-box-img">
 						</a>
@@ -850,7 +858,7 @@
 						</div>
 					</div>
 					<div class="reviews-box  position-relative">
-						<a href="./assets/img/reviews/stanishevskia.png"
+						<a href="#popup-galery-10"
 							class="reviews-box-head open-popup-rev position-relative open-modal  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/reviews/stanishevskia.png" alt="" class="reviews-box-img">
 						</a>
@@ -872,7 +880,7 @@
 						</div>
 					</div>
 					<div class="reviews-box  position-relative">
-						<a href="./assets/img/reviews/dybinskaia_2.png"
+						<a href="#popup-galery-11"
 							class="reviews-box-head open-popup-rev position-relative open-modal  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/reviews/dybinskaia_2.png" alt="" class="reviews-box-img">
 						</a>
@@ -894,7 +902,7 @@
 						</div>
 					</div>
 					<div class="reviews-box  position-relative">
-						<a href="./assets/img/reviews/stanishevskia-2.png"
+						<a href="#popup-galery-12"
 							class="reviews-box-head open-popup-rev position-relative open-modal d-flex align-items-center justify-content-center">
 							<img src="./assets/img/reviews/stanishevskia-2.png" alt="" class="reviews-box-img">
 						</a>
@@ -930,13 +938,13 @@
 				</span>
 			</button>
 		</section>
-		<section class="jobs jobs-padding">
+		<section class="jobs jobs-padding" data-aos="fade-left">
 			<h3 class="title jobs-title text-center">
 				Наши работы
 			</h3>
 			<div class="container best-container">
 				<div class="jobs-gallery jobs-gallery-img  d-flex flex-wrap justify-content-between">
-					<a href="./assets/img/jobs/monarh.jpg" class="jobs-box position-relative ">
+					<a href="#popup-galery-1" class="jobs-box position-relative ">
 						<div class="jobs-head  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/jobs/monarh.jpg" alt="" class="jobs-img">
 						</div>
@@ -945,7 +953,7 @@
 						</div>
 					</a>
 		
-					<a href="./assets/img/jobs/adrian.jpg" class="jobs-box position-relative ">
+					<a href="#popup-galery-2" class="jobs-box position-relative ">
 						<div class="jobs-head  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/jobs/adrian.jpg" alt="" class="jobs-img">
 						</div>
@@ -954,7 +962,7 @@
 						</div>
 					</a>
 		
-					<a href="./assets/img/jobs/nidjilea.jpg" class="jobs-box position-relative ">
+					<a href="#popup-galery-3" class="jobs-box position-relative ">
 						<div class="jobs-head  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/jobs/nidjilea.jpg" alt="" class="jobs-img">
 						</div>
@@ -963,7 +971,7 @@
 						</div>
 					</a>
 		
-					<a href="./assets/img/jobs/adrian-2.jpg" class="jobs-box position-relative ">
+					<a href="#popup-galery-4" class="jobs-box position-relative ">
 						<div class="jobs-head  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/jobs/adrian-2.jpg" alt="" class="jobs-img">
 						</div>
@@ -972,7 +980,7 @@
 						</div>
 					</a>
 		
-					<a href="./assets/img/jobs/gaspard.jpg" class="jobs-box position-relative ">
+					<a href="#popup-galery-5" class="jobs-box position-relative ">
 						<div class="jobs-head  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/jobs/gaspard.jpg" alt="" class="jobs-img">
 						</div>
@@ -981,7 +989,7 @@
 						</div>
 					</a>
 		
-					<a href="./assets/img/jobs/adrian-3.jpg" class="jobs-box position-relative ">
+					<a href="#popup-galery-6" class="jobs-box position-relative ">
 						<div class="jobs-head  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/jobs/adrian-3.jpg" alt="" class="jobs-img">
 						</div>
@@ -990,7 +998,7 @@
 						</div>
 					</a>
 		
-					<a href="./assets/img/jobs/felecia.jpg" class="jobs-box position-relative ">
+					<a href="#popup-galery-7" class="jobs-box position-relative ">
 						<div class="jobs-head  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/jobs/felecia.jpg" alt="" class="jobs-img">
 						</div>
@@ -999,7 +1007,7 @@
 						</div>
 					</a>
 		
-					<a href="./assets/img/jobs/nidjea-2.jpg" class="jobs-box position-relative ">
+					<a href="#popup-galery-8" class="jobs-box position-relative ">
 						<div class="jobs-head  d-flex align-items-center justify-content-center">
 							<img src="./assets/img/jobs/nidjea-2.jpg" alt="" class="jobs-img">
 						</div>
@@ -1020,7 +1028,7 @@
 				</span>
 			</button>
 		</section>
-		<section class="forms forms-padding">
+		<section class="forms forms-padding" data-aos="flip-up">
 			<h3 class="title forms-title text-center">
 				Вы дизайнер? Приглашаем к сотрудничеству!
 			</h3>
@@ -1028,7 +1036,8 @@
 			<h4 class="forms-wrap-title text-center">
 				заполните поля ниже и наши менеджеры свяжутся с вами в ближайшее время
 			</h4>
-			<form action="/" class="forms-box d-flex flex-column flex-md-row align-items-center justify-content-between">
+			<form id="form-18" action="/"
+				class="forms-box d-flex flex-column flex-md-row align-items-center justify-content-between">
 				<input type="text" class="forms-input mask-tell text-center" placeholder="Телефон">
 				<button type="submit" class="forms-btn d-flex align-items-center justify-content-center">
 					Перезвонить мне
@@ -1204,7 +1213,7 @@
 				Заполните поля ниже и мы <br>
 				отправим Вам полный каталог
 			</p>
-			<form action="/" class="popup-tell-form">
+			<form id="form-1" action="/" class="popup-tell-form">
 				<input type="text" class="popup-tell-input text-center" name="name" placeholder="Ваше имя">
 				<input type="tel" class="popup-tell-input mask-tell text-center" name="phone" placeholder="Телефон"
 					inputmode="text">
@@ -1434,7 +1443,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-2" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -1681,7 +1690,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-3" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -1911,7 +1920,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-4" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -2159,7 +2168,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-5" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -2432,7 +2441,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-6" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -2680,7 +2689,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-7" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -2903,7 +2912,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-8" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -3152,7 +3161,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-9" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -3397,7 +3406,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-10" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -3652,7 +3661,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-11" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -3907,7 +3916,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-12" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -4140,7 +4149,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-13" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -4395,7 +4404,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-14" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -4628,7 +4637,7 @@
 		
 					</div>
 		
-					<form class="popup-form">
+					<form id="form-15" class="popup-form">
 						<div class="popup-form-row d-flex justify-content-between">
 							<input type="text" class="popup-tell-input popup--input  text-center" name="name"
 								placeholder="Ваше имя">
@@ -4653,6 +4662,203 @@
 					</label>
 				</div>
 			</div>
+		</div>
+		<div id="popup-galery-1" class="popup-galery-box mfp-hide">
+			<div class=""></div>
+			<img src="./assets/img/jobs/monarh.jpg" alt="" class="popup-galery-img">
+			<a href="#popup-tell"
+				class="popup-galery-btn  open-popup block-btn d-flex align-items-center justify-content-center">
+				Хочу такой
+			</a>
+		
+			<button class="popup-galery-close">
+				<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25 1L1 25M1 1L25 25" stroke="black" />
+				</svg>
+		
+			</button>
+		
+		</div>
+		
+		<div id="popup-galery-2" class="popup-galery-box mfp-hide">
+			<img src="./assets/img/jobs/adrian.jpg" alt="" class="popup-galery-img">
+			<a href="#popup-tell"
+				class="popup-galery-btn  open-popup block-btn d-flex align-items-center justify-content-center">
+				Хочу такой
+			</a>
+			<button class="popup-galery-close">
+				<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25 1L1 25M1 1L25 25" stroke="black" />
+				</svg>
+		
+			</button>
+		</div>
+		
+		<div id="popup-galery-3" class="popup-galery-box mfp-hide">
+			<img src="./assets/img/jobs/nidjilea.jpg" alt="" class="popup-galery-img">
+			<a href="#popup-tell"
+				class="popup-galery-btn  open-popup block-btn d-flex align-items-center justify-content-center">
+				Хочу такой
+			</a>
+			<button class="popup-galery-close">
+				<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25 1L1 25M1 1L25 25" stroke="black" />
+				</svg>
+		
+			</button>
+		</div>
+		
+		<div id="popup-galery-4" class="popup-galery-box mfp-hide">
+			<img src="./assets/img/jobs/adrian-2.jpg" alt="" class="popup-galery-img">
+			<a href="#popup-tell"
+				class="popup-galery-btn  open-popup block-btn d-flex align-items-center justify-content-center">
+				Хочу такой
+			</a>
+			<button class="popup-galery-close">
+				<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25 1L1 25M1 1L25 25" stroke="black" />
+				</svg>
+		
+			</button>
+		</div>
+		
+		<div id="popup-galery-5" class="popup-galery-box mfp-hide">
+			<img src="./assets/img/jobs/gaspard.jpg" alt="" class="popup-galery-img">
+			<a href="#popup-tell"
+				class="popup-galery-btn  open-popup block-btn d-flex align-items-center justify-content-center">
+				Хочу такой
+			</a>
+			<button class="popup-galery-close">
+				<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25 1L1 25M1 1L25 25" stroke="black" />
+				</svg>
+		
+			</button>
+		</div>
+		
+		<div id="popup-galery-6" class="popup-galery-box mfp-hide">
+			<img src="./assets/img/jobs/adrian-3.jpg" alt="" class="popup-galery-img">
+			<a href="#popup-tell"
+				class="popup-galery-btn  open-popup block-btn d-flex align-items-center justify-content-center">
+				Хочу такой
+			</a>
+			<button class="popup-galery-close">
+				<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25 1L1 25M1 1L25 25" stroke="black" />
+				</svg>
+		
+			</button>
+		</div>
+		
+		<div id="popup-galery-7" class="popup-galery-box mfp-hide">
+			<img src="./assets/img/jobs/felecia.jpg" alt="" class="popup-galery-img">
+			<a href="#popup-tell"
+				class="popup-galery-btn  open-popup block-btn d-flex align-items-center justify-content-center">
+				Хочу такой
+			</a>
+			<button class="popup-galery-close">
+				<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25 1L1 25M1 1L25 25" stroke="black" />
+				</svg>
+		
+			</button>
+		</div>
+		
+		<div id="popup-galery-8" class="popup-galery-box mfp-hide">
+			<img src="./assets/img/jobs/nidjea-2.jpg" alt="" class="popup-galery-img">
+			<a href="#popup-tell"
+				class="popup-galery-btn  open-popup block-btn d-flex align-items-center justify-content-center">
+				Хочу такой
+			</a>
+			<button class="popup-galery-close">
+				<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25 1L1 25M1 1L25 25" stroke="black" />
+				</svg>
+		
+			</button>
+		</div>
+		
+		
+		
+		
+		<!--reviews-->
+		
+		<div id="popup-galery-9" class="popup-galery-box mfp-hide">
+			<img src="./assets/img/reviews/dybinskaia.png" alt="" class="popup-galery-img">
+			<a href="#popup-tell"
+				class="popup-galery-btn  open-popup block-btn d-flex align-items-center justify-content-center">
+				Хочу такой
+			</a>
+			<button class="popup-galery-close">
+				<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25 1L1 25M1 1L25 25" stroke="black" />
+				</svg>
+		
+			</button>
+		</div>
+		
+		
+		<div id="popup-galery-10" class="popup-galery-box mfp-hide">
+			<img src="./assets/img/reviews/stanishevskia.png" alt="" class="popup-galery-img">
+			<a href="#popup-tell"
+				class="popup-galery-btn  open-popup block-btn d-flex align-items-center justify-content-center">
+				Хочу такой
+			</a>
+			<button class="popup-galery-close">
+				<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25 1L1 25M1 1L25 25" stroke="black" />
+				</svg>
+		
+			</button>
+		</div>
+		
+		
+		<div id="popup-galery-11" class="popup-galery-box mfp-hide">
+			<img src="./assets/img/reviews/dybinskaia_2.png" alt="" class="popup-galery-img">
+			<a href="#popup-tell"
+				class="popup-galery-btn  open-popup block-btn d-flex align-items-center justify-content-center">
+				Хочу такой
+			</a>
+			<button class="popup-galery-close">
+				<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25 1L1 25M1 1L25 25" stroke="black" />
+				</svg>
+		
+			</button>
+		</div>
+		
+		
+		<div id="popup-galery-12" class="popup-galery-box mfp-hide">
+			<img src="./assets/img/reviews/stanishevskia-2.png" alt="" class="popup-galery-img">
+			<a href="#popup-tell"
+				class="popup-galery-btn  open-popup block-btn d-flex align-items-center justify-content-center">
+				Хочу такой
+			</a>
+			<button class="popup-galery-close">
+				<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25 1L1 25M1 1L25 25" stroke="black" />
+				</svg>
+		
+			</button>
+		</div>
+		
+		
+		<div id="popup-video" class="popup-galery-box popup-galery-video  mfp-hide">
+		
+			<video id="video-1" preload="metadata" class="video-box" src="./assets/video/one.mp4" loop controls>
+				Тег video не поддерживается вашим браузером.
+				<a href="./assets/video/one.mp4">Скачайте видео</a>.
+			</video>
+			<a href="#popup-tell"
+				class="popup-galery-btn  video-close open-popup block-btn d-flex align-items-center justify-content-center">
+				Хочу такой
+			</a>
+			<button class="popup-galery-close video-close">
+				<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25 1L1 25M1 1L25 25" stroke="black" />
+				</svg>
+		
+			</button>
 		</div>
 	</div>
 	

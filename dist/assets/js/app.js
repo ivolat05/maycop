@@ -41,7 +41,7 @@ $(function () {
 	});
 
 	// маска телефона
-	$('.mask-tell').inputmask("+X (999) 999-9999", {
+	$('.mask-tell').inputmask("+7 (999) 999-9999", {
 		definitions: {
 			"X": {
 				validator: "[7-8]",
@@ -59,25 +59,48 @@ $(function () {
 
 	$('.open-popup').magnificPopup({
 		type: 'inline',
-		mainClass: 'mfp-fade mfp-left'
+		mainClass: 'mfp-fade mfp-left '
 
 	});
+
 
 	$('.open-popup-rev').magnificPopup({
-		type: 'image',
-		mainClass: 'mfp-fade mfp-fix mfp-left'
+		type: 'inline',
+		mainClass: 'mfp-fade  mfp-left'
 
 	});
 
-	$('.jobs-gallery-img').magnificPopup({
+	$('.jobs-gallery-img, open-popup').magnificPopup({
 		delegate: 'a',
-		type: 'image',
-		mainClass: 'mfp-fade mfp-fix  mfp-left',
-		tLoading: 'Загрузка изоброжения',
+		type: 'inline',
+		mainClass: 'mfp-fade  mfp-left btn-popup',
 		gallery: {
 			enabled: true,
 			navigateByImgClick: true,
+			tPrev: 'Previous (Left arrow key)',
+			tNext: 'Next (Right arrow key)',
 			preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+		},
+		callbacks: {
+
+			buildControls: function () {
+				// re-appends controls inside the main container
+				this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+				console.log(this.arrowLeft)
+			},
+			open: function () {
+
+				let btn = document.querySelectorAll('.popup-galery-btn');
+				let left = document.querySelector('.mfp-arrow-left');
+				let right = document.querySelector('.mfp-arrow-right');
+
+				btn.forEach(item => {
+					item.addEventListener('click', () => {
+						left.classList.add('arrow-not');
+						right.classList.add('arrow-not');
+					})
+				})
+			},
 		}
 	});
 
@@ -96,7 +119,7 @@ $(function () {
 
 	}
 	closePopup('popup-close');
-
+	closePopup('popup-galery-close');
 	// слайдер в моальных окнах
 	function slaidPopup(openBtn) {
 		let btn = document.querySelectorAll(`${openBtn}`);
@@ -307,5 +330,28 @@ $(function () {
 	cartVisibtl('.jobs-btn', '.jobs-box');
 
 
+	// start video
+	function video(btnStart) {
+		let btn = document.querySelectorAll(`${btnStart}`);
+		let videoStop = document.querySelectorAll('.video-close');
+		let video = document.querySelectorAll('.video-box');
 
+		btn.forEach(item => {
+			item.addEventListener('click', () => {
+				let videoId = item.getAttribute('data-video');
+				let videoPlay = document.querySelector(videoId);
+				videoPlay.play();
+			})
+		})
+		videoStop.forEach(item => {
+			item.addEventListener('click', () => {
+				video.forEach(item => {
+					item.pause();
+					item.currentTime = 0;
+				})
+
+			})
+		})
+	}
+	video('.video-start')
 })
