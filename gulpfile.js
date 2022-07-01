@@ -35,7 +35,7 @@ var path = {
 		css: "src/assets/sass/style.scss",
 		images: "src/assets/img/**/*.{jpg,png,svg,gif,ico,xml,webmanifest}",
 		fonts: "src/assets/font/*.{ttf,woff,woff2,eot,svg}",
-		video: "src/assets/video/"
+		video: "src/assets/video/*.*"
 	},
 	watch: {
 		html: "src/**/*.html",
