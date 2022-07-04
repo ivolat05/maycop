@@ -28,414 +28,414 @@
 $(function () {
 
 
-	// увелечения изоброжения
-	$('.ex1').zoom({ magnify: 3 });
-	// анимация
-	AOS.init({
-		duration: 1150,
-	});
+    // увелечения изоброжения
+    $('.ex1').zoom({ magnify: 3 });
+    // анимация
+    AOS.init({
+        duration: 1150,
+    });
 
-	// скролл
-	$(".scroll-link").click(function () {
-		var target = $(this).attr('href');
-		$('html, body').animate({
-			scrollTop: $(target).offset().top - 100
-		}, 1000);
-		return false;
-	});
+    // скролл
+    $(".scroll-link").click(function () {
+        var target = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(target).offset().top - 100
+        }, 1000);
+        return false;
+    });
 
-	// маска телефона
-	$('.mask-tell').inputmask("+7 (999) 999-9999", {
-		definitions: {
-			"X": {
-				validator: "[7-8]",
-			}
-		},
-		oncomplete: function () {
-			$(this).val('+7' + $(this).val().substring(2));
-		}
-	});
-
-
-	// popup
+    // маска телефона
+    $('.mask-tell').inputmask("+7 (999) 999-9999", {
+        definitions: {
+            "X": {
+                validator: "[7-8]",
+            }
+        },
+        oncomplete: function () {
+            $(this).val('+7' + $(this).val().substring(2));
+        }
+    });
 
 
-
-	$('.open-popup').magnificPopup({
-		type: 'inline',
-		mainClass: 'mfp-fade mfp-left '
-
-	});
-
-
-	$('.open-popup-rev').magnificPopup({
-		type: 'inline',
-		mainClass: 'mfp-fade  mfp-left',
-
-		callbacks: {
-			close: function () {
-				let video = document.querySelectorAll('.video-box');
-				video.forEach(item => {
-					item.pause();
-					item.currentTime = 0;
-				})
-			}
-		}
-	});
-
-	$('.jobs-gallery-img, open-modal').magnificPopup({
-		delegate: 'a',
-		type: 'inline',
-		mainClass: 'mfp-fade  mfp-left btn-popup',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			tPrev: 'Previous (Left arrow key)',
-			tNext: 'Next (Right arrow key)',
-			preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
-		},
-		callbacks: {
-
-			buildControls: function () {
-				// re-appends controls inside the main container
-				this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
-
-			},
-			open: function () {
-
-				let btn = document.querySelectorAll('.popup-galery-btn');
-				let left = document.querySelector('.mfp-arrow-left');
-				let right = document.querySelector('.mfp-arrow-right');
-
-				btn.forEach(item => {
-					item.addEventListener('click', () => {
-						left.classList.add('arrow-not');
-						right.classList.add('arrow-not');
-					})
-				})
-			},
-		}
-	});
-
-
-	//popup close
-	function closePopup(closeBtn) {
-		let popupClose = document.querySelectorAll(`.${closeBtn}`);
-		if (popupClose) {
-			popupClose.forEach((item) => {
-				item.addEventListener('click', () => {
-					$.magnificPopup.close();
-				})
-			})
-		}
-
-
-	}
-	closePopup('popup-close');
-	closePopup('popup-galery-close');
-	// слайдер в моальных окнах
-	function slaidPopup(openBtn) {
-		let btn = document.querySelectorAll(`${openBtn}`);
-		if (btn) {
-			btn.forEach(item => {
-				item.addEventListener('click', () => {
-					let classSlaider = item.getAttribute('data-slaider');
-					let slaiderHead = `#${classSlaider}-slaider`;
-					let slaiderNav = `#${classSlaider}-nav`;
-					let nextArrows = `#${classSlaider}-next`;
-					let prevArrows = `#${classSlaider}-prev`;
-					let numberImgNav = document.querySelectorAll(`#${classSlaider}-nav .popup-nav-img`);
-
-					if (numberImgNav.length === 1) {
-						document.querySelector(slaiderNav).style.display = 'none';
-						document.querySelector(slaiderHead).style.height = '100%';
-						document.querySelector(('.popup-slaider-head')).style.height = '100%';
-						document.querySelector(('.popup-slaider-box')).style.height = '110%';
-						document.querySelector(('.popup-form')).style.margin = 'auto 0 0 0';
-						$(slaiderHead).not('.slick-initialized').slick({
-							slidesToShow: 1,
-							slidesToScroll: 1,
-							arrows: true,
-							fade: true,
-							nextArrow: $(nextArrows),
-							prevArrow: $(prevArrows),
-							rows: 0,
-						});
-					} else {
-						$(slaiderHead).not('.slick-initialized').slick({
-							slidesToShow: 1,
-							slidesToScroll: 1,
-							arrows: true,
-							fade: true,
-							nextArrow: $(nextArrows),
-							prevArrow: $(prevArrows),
-							rows: 0,
-							asNavFor: slaiderNav
-						});
-						$(slaiderNav).not('.slick-initialized').slick({
-							slidesToShow: 4,
-							slidesToScroll: 1,
-							asNavFor: slaiderHead,
-							dots: false,
-							rows: 0,
-							focusOnSelect: true,
-							arrows: false,
-							responsive: [
-								{
-									breakpoint: 770,
-									settings: {
-										slidesToShow: 3,
-										slidesToScroll: 1
-
-									}
-								}
-							]
-						});
-					}
+    // popup
 
 
 
-				})
-			})
-		}
-	}
+    $('.open-popup').magnificPopup({
+        type: 'inline',
+        mainClass: 'mfp-fade mfp-left '
 
-	slaidPopup('.open-popup')
-
-	// catalog slaider
-	if (window.innerWidth >= 992) {
-		$(".catalog-slaider").slick({
-			slidesToShow: 4,
-			slidesToScroll: 1,
-			dots: false,
-			infinite: false,
-			arrows: true,
-
-			nextArrow: $(".block__slick-next"),
-			prevArrow: $(".block__slick-prev"),
-
-			responsive: [
-				{
-					breakpoint: 1200,
-					settings: {
-						slidesToShow: 3,
-						slidesToScroll: 1,
-						dots: false
-					}
-				}
-			]
-		});
-
-	}
-	// jobs slaider
-	if (window.innerWidth <= 992) {
-		$(".jobs-gallery").slick({
-			slidesToShow: 3,
-			slidesToScroll: 1,
-			dots: true,
-			infinite: false,
-			arrows: false,
-			responsive: [
-				{
-					breakpoint: 770,
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1
-					}
-				},
-				{
-					breakpoint: 400,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-				}
-			]
-		});
-
-	}
-	// catalog slaider
-	window.addEventListener("resize", function () {
-		if (window.innerWidth >= 992) {
-			$(".catalog-slaider").not('.slick-initialized').slick({
-				slidesToShow: 4,
-				slidesToScroll: 1,
-				dots: false,
-				infinite: false,
-				arrows: true,
-
-				nextArrow: $(".block__slick-next"),
-				prevArrow: $(".block__slick-prev"),
-
-				responsive: [
-					{
-						breakpoint: 1200,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 1,
-							dots: false
-						}
-					}
-				]
-			});
-		} else {
-			$('.catalog-slaider').filter('.slick-initialized').slick('unslick');
-		}
-	});
-	// jobs slaider
-	window.addEventListener("resize", function () {
-		if (window.innerWidth <= 992) {
-			$(".jobs-gallery").not('.slick-initialized').slick({
-				slidesToShow: 3,
-				slidesToScroll: 1,
-				dots: true,
-				infinite: false,
-				arrows: false,
-				responsive: [
-					{
-						breakpoint: 770,
-						settings: {
-							slidesToShow: 2,
-							slidesToScroll: 1
-						}
-					},
-					{
-						breakpoint: 400,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1
-						}
-					}
-				]
-			});
-		} else {
-			$('.jobs-gallery').filter('.slick-initialized').slick('unslick');
-		}
-	});
+    });
 
 
-	// раскрытия скрытых карточек
-	// btnActive- кнопка активации
-	// cartHiden- скрытые карточки
-	function cartVisibtl(btnActive, cartHiden) {
-		let btn = document.querySelector(`${btnActive}`);
-		let card = document.querySelectorAll(`${cartHiden}`);
-		if (card) {
-			btn.addEventListener('click', () => {
-				if (btn.classList.contains('btn--visible')) {
-					btn.classList.remove('btn--visible')
-				} else {
-					btn.classList.add('btn--visible')
-				}
-				card.forEach(item => {
-					if (item.classList.contains('--active')) {
-						item.classList.remove('--active');
-					} else {
-						item.classList.add('--active');
-					}
-				})
-			})
-		}
-	}
-	cartVisibtl('.catalog-btn-open', '.catalog-table');
-	cartVisibtl('.catalog-btn-open-2', '.catalog-chair');
-	cartVisibtl('.reviews-btn', '.reviews-box');
-	cartVisibtl('.jobs-btn', '.jobs-box');
+    $('.open-popup-rev').magnificPopup({
+        type: 'inline',
+        mainClass: 'mfp-fade  mfp-left',
+
+        callbacks: {
+            close: function () {
+                let video = document.querySelectorAll('.video-box');
+                video.forEach(item => {
+                    item.pause();
+                    item.currentTime = 0;
+                })
+            }
+        }
+    });
+
+    $('.jobs-gallery-img, open-modal').magnificPopup({
+        delegate: 'a',
+        type: 'inline',
+        mainClass: 'mfp-fade  mfp-left btn-popup',
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            tPrev: 'Previous (Left arrow key)',
+            tNext: 'Next (Right arrow key)',
+            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        callbacks: {
+
+            buildControls: function () {
+                // re-appends controls inside the main container
+                this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+
+            },
+            open: function () {
+
+                let btn = document.querySelectorAll('.popup-galery-btn');
+                let left = document.querySelector('.mfp-arrow-left');
+                let right = document.querySelector('.mfp-arrow-right');
+
+                btn.forEach(item => {
+                    item.addEventListener('click', () => {
+                        left.classList.add('arrow-not');
+                        right.classList.add('arrow-not');
+                    })
+                })
+            },
+        }
+    });
 
 
-	// start video
-	function video(btnStart) {
-		let btn = document.querySelectorAll(`${btnStart}`);
-		let videoStop = document.querySelectorAll('.video-close');
-		let video = document.querySelectorAll('.video-box');
+    //popup close
+    function closePopup(closeBtn) {
+        let popupClose = document.querySelectorAll(`.${closeBtn}`);
+        if (popupClose) {
+            popupClose.forEach((item) => {
+                item.addEventListener('click', () => {
+                    $.magnificPopup.close();
+                })
+            })
+        }
 
-		btn.forEach(item => {
-			item.addEventListener('click', () => {
-				let videoId = item.getAttribute('data-video');
-				let videoPlay = document.querySelector(videoId);
-				videoPlay.play();
-			})
-		})
-		videoStop.forEach(item => {
-			item.addEventListener('click', () => {
-				video.forEach(item => {
-					item.pause();
-					item.currentTime = 0;
-				})
 
-			})
-		})
+    }
+    closePopup('popup-close');
+    closePopup('popup-galery-close');
+    // слайдер в моальных окнах
+    function slaidPopup(openBtn) {
+        let btn = document.querySelectorAll(`${openBtn}`);
+        if (btn) {
+            btn.forEach(item => {
+                item.addEventListener('click', () => {
+                    let classSlaider = item.getAttribute('data-slaider');
+                    let slaiderHead = `#${classSlaider}-slaider`;
+                    let slaiderNav = `#${classSlaider}-nav`;
+                    let nextArrows = `#${classSlaider}-next`;
+                    let prevArrows = `#${classSlaider}-prev`;
+                    let numberImgNav = document.querySelectorAll(`#${classSlaider}-nav .popup-nav-img`);
 
-	}
-	video('.video-start')
+                    if (numberImgNav.length === 1) {
+                        document.querySelector(slaiderNav).style.display = 'none';
+                        document.querySelector(slaiderHead).style.height = '100%';
+                        document.querySelector(('.popup-slaider-head')).style.height = '100%';
+                        document.querySelector(('.popup-slaider-box')).style.height = '110%';
+                        document.querySelector(('.popup-form')).style.margin = 'auto 0 0 0';
+                        $(slaiderHead).not('.slick-initialized').slick({
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: true,
+                            fade: true,
+                            nextArrow: $(nextArrows),
+                            prevArrow: $(prevArrows),
+                            rows: 0,
+                        });
+                    } else {
+                        $(slaiderHead).not('.slick-initialized').slick({
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: true,
+                            fade: true,
+                            nextArrow: $(nextArrows),
+                            prevArrow: $(prevArrows),
+                            rows: 0,
+                            asNavFor: slaiderNav
+                        });
+                        $(slaiderNav).not('.slick-initialized').slick({
+                            slidesToShow: 4,
+                            slidesToScroll: 1,
+                            asNavFor: slaiderHead,
+                            dots: false,
+                            rows: 0,
+                            focusOnSelect: true,
+                            arrows: false,
+                            responsive: [
+                                {
+                                    breakpoint: 770,
+                                    settings: {
+                                        slidesToShow: 3,
+                                        slidesToScroll: 1
+
+                                    }
+                                }
+                            ]
+                        });
+                    }
 
 
 
-	// кол-во символов ввода телефона
-	$.validator.addMethod("minlenghtphone", function (value, element) {
-		return value.replace(/\D+/g, '').length > 10;
-	});
+                })
+            })
+        }
+    }
+
+    slaidPopup('.open-popup')
+
+    // catalog slaider
+    if (window.innerWidth >= 992) {
+        $(".catalog-slaider").slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            dots: false,
+            infinite: true,
+            arrows: true,
+
+            nextArrow: $(".block__slick-next"),
+            prevArrow: $(".block__slick-prev"),
+
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        dots: false
+                    }
+                }
+            ]
+        });
+
+    }
+    // jobs slaider
+    if (window.innerWidth <= 992) {
+        $(".jobs-gallery").slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            dots: true,
+            infinite: true,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 770,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 400,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+
+    }
+    // catalog slaider
+    window.addEventListener("resize", function () {
+        if (window.innerWidth >= 992) {
+            $(".catalog-slaider").not('.slick-initialized').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                dots: false,
+                infinite: true,
+                arrows: true,
+
+                nextArrow: $(".block__slick-next"),
+                prevArrow: $(".block__slick-prev"),
+
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            dots: false
+                        }
+                    }
+                ]
+            });
+        } else {
+            $('.catalog-slaider').filter('.slick-initialized').slick('unslick');
+        }
+    });
+    // jobs slaider
+    window.addEventListener("resize", function () {
+        if (window.innerWidth <= 992) {
+            $(".jobs-gallery").not('.slick-initialized').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                dots: true,
+                infinite: true,
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 770,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 400,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        } else {
+            $('.jobs-gallery').filter('.slick-initialized').slick('unslick');
+        }
+    });
+
+
+    // раскрытия скрытых карточек
+    // btnActive- кнопка активации
+    // cartHiden- скрытые карточки
+    function cartVisibtl(btnActive, cartHiden) {
+        let btn = document.querySelector(`${btnActive}`);
+        let card = document.querySelectorAll(`${cartHiden}`);
+        if (card) {
+            btn.addEventListener('click', () => {
+                if (btn.classList.contains('btn--visible')) {
+                    btn.classList.remove('btn--visible')
+                } else {
+                    btn.classList.add('btn--visible')
+                }
+                card.forEach(item => {
+                    if (item.classList.contains('--active')) {
+                        item.classList.remove('--active');
+                    } else {
+                        item.classList.add('--active');
+                    }
+                })
+            })
+        }
+    }
+    cartVisibtl('.catalog-btn-open', '.catalog-table');
+    cartVisibtl('.catalog-btn-open-2', '.catalog-chair');
+    cartVisibtl('.reviews-btn', '.reviews-box');
+    cartVisibtl('.jobs-btn', '.jobs-box');
+
+
+    // start video
+    function video(btnStart) {
+        let btn = document.querySelectorAll(`${btnStart}`);
+        let videoStop = document.querySelectorAll('.video-close');
+        let video = document.querySelectorAll('.video-box');
+
+        btn.forEach(item => {
+            item.addEventListener('click', () => {
+                let videoId = item.getAttribute('data-video');
+                let videoPlay = document.querySelector(videoId);
+                videoPlay.play();
+            })
+        })
+        videoStop.forEach(item => {
+            item.addEventListener('click', () => {
+                video.forEach(item => {
+                    item.pause();
+                    item.currentTime = 0;
+                })
+
+            })
+        })
+
+    }
+    video('.video-start')
 
 
 
-	var validate = {
-		rules: {
-			name: {
-				required: true,
-				minlength: 3
-
-			},
-			phone: {
-				required: true,
-				minlenghtphone: true
-			},
-		},
-		errorPlacement: function (error, element) {
-			return;
-		},
-		submitHandler: function () {
-			var that = this;
-			$.ajax({
-				type: 'POST',
-				url: 'sendmail.php',
-				data: $(that.currentForm).serialize(),
-				success: function (msg) {
-					$(that.currentForm).trigger('reset');
-					$.magnificPopup.open({
-						items: {
-							src: "#popup-success"
-						},
-						callbacks: {
-							open: function () {
-								setTimeout($.magnificPopup.close, 5000);
-							}
-						}
-					});
-					ym(89234425, 'reachGoal', 'zayavka');
-				}
-			});
-		}
-	};
+    // кол-во символов ввода телефона
+    $.validator.addMethod("minlenghtphone", function (value, element) {
+        return value.replace(/\D+/g, '').length > 10;
+    });
 
 
-	$("#form-1").validate(validate);
-	$("#form-2").validate(validate);
-	$("#form-3").validate(validate);
-	$("#form-4").validate(validate);
-	$("#form-5").validate(validate);
-	$("#form-6").validate(validate);
-	$("#form-7").validate(validate);
-	$("#form-8").validate(validate);
-	$("#form-9").validate(validate);
-	$("#form-10").validate(validate);
-	$("#form-11").validate(validate);
-	$("#form-12").validate(validate);
-	$("#form-13").validate(validate);
-	$("#form-14").validate(validate);
-	$("#form-15").validate(validate);
-	$("#form-16").validate(validate);
-	$("#form-17").validate(validate);
-	$("#form-18").validate(validate);
+
+    var validate = {
+        rules: {
+            name: {
+                required: true,
+                minlength: 3
+
+            },
+            phone: {
+                required: true,
+                minlenghtphone: true
+            },
+        },
+        errorPlacement: function (error, element) {
+            return;
+        },
+        submitHandler: function () {
+            var that = this;
+            $.ajax({
+                type: 'POST',
+                url: 'sendmail.php',
+                data: $(that.currentForm).serialize(),
+                success: function (msg) {
+                    $(that.currentForm).trigger('reset');
+                    $.magnificPopup.open({
+                        items: {
+                            src: "#popup-success"
+                        },
+                        callbacks: {
+                            open: function () {
+                                setTimeout($.magnificPopup.close, 5000);
+                            }
+                        }
+                    });
+                    ym(89234425, 'reachGoal', 'zayavka');
+                }
+            });
+        }
+    };
+
+
+    $("#form-1").validate(validate);
+    $("#form-2").validate(validate);
+    $("#form-3").validate(validate);
+    $("#form-4").validate(validate);
+    $("#form-5").validate(validate);
+    $("#form-6").validate(validate);
+    $("#form-7").validate(validate);
+    $("#form-8").validate(validate);
+    $("#form-9").validate(validate);
+    $("#form-10").validate(validate);
+    $("#form-11").validate(validate);
+    $("#form-12").validate(validate);
+    $("#form-13").validate(validate);
+    $("#form-14").validate(validate);
+    $("#form-15").validate(validate);
+    $("#form-16").validate(validate);
+    $("#form-17").validate(validate);
+    $("#form-18").validate(validate);
 
 
 })
